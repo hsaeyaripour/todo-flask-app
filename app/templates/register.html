@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>ثبت‌نام</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>ثبت‌نام</h2>
+        <form method="post" class="auth-form">
+            <input name="username" placeholder="نام کاربری" required>
+            <input name="password" placeholder="رمز عبور" type="password" required>
+            <button type="submit">ثبت‌نام</button>
+        </form>
+        <p>قبلاً ثبت‌نام کردی؟<a href="/login"> ورود </a></p>
+    </div>
+</body>
+</html>

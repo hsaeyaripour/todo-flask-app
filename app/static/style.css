@@ -1,0 +1,98 @@
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css');
+
+body {
+    font-family: 'Vazir', sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+/* مرکز قرار گرفتن همه فرم‌ها و بخش‌ها */
+.container,
+.auth-form {
+    width: 100%;
+    max-width: 400px;
+    margin: 100px auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* تیتر فرم‌ها */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* ورودی‌ها */
+.auth-form input,
+form input[type="text"],
+form input[type="password"] {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* دکمه‌ها */
+.auth-form button,
+form button {
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.auth-form button:hover,
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* لینک‌ها */
+.auth-form a {
+    font-size: 0.9rem;
+    color: #007bff;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.auth-form a:hover {
+    text-decoration: underline;
+}
+
+/* لیست تسک‌ها */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+li {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* فرم حذف */
+li form {
+    display: inline;
+}
