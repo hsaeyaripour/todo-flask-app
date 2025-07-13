@@ -16,15 +16,15 @@ jobs:
 
     - name: Set up Docker Compose
       run: |
-        docker-compose --version
+        docker compose --version
 
     - name: Build and run services
       run: |
-        docker-compose up -d --build
+        docker compose up -d --build
 
     - name: Wait for services to be ready
       run: sleep 15
 
     - name: Run tests inside container
       run: |
-        docker-compose exec -T web pytest app/tests/
+        docker compose exec -T web pytest app/tests/
