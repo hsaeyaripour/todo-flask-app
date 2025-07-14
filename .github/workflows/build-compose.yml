@@ -11,20 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Set up Docker Compose
-      run: |
-        docker compose --version
+      - name: Check Docker Compose version
+        run: docker compose version
 
-    - name: Build and run services
-      run: |
-        docker compose up -d --build
+      - name: Build and run services
+        run: docker compose up -d --build
 
-    - name: Wait for services to be ready
-      run: sleep 15
+      - name: Wait for services to be ready
+        run: |
+          echo "Waiting for services to become healthy..."
+          sleep 15  # یا ابزار healthcheck دقیق‌تر استفاده کن اگر تنظیمش کردی در docker-compose.yml
 
-    - name: Run tests inside container
-      run: |
-        docker compose exec -T web pytest app/tests/
+      - name: Run tests inside container
+        run: |
+          docker compose exec -T web pytest app/tests/
