@@ -32,5 +32,6 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/todo-app:latest
-            ${{ secrets.DOCKER_USERNAME }}/todo-app:${{ env.SHORT_SHA }}
+                ${{ secrets.DOCKER_USERNAME }}/todo-flask-app:latest
+                ${{ secrets.DOCKER_USERNAME }}/todo-flask-app:${{ env.SHORT_SHA }}
+
