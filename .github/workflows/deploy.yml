@@ -13,10 +13,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up SSH
+      - name: Setup SSH
         uses: webfactory/ssh-agent@v0.9.0
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Run remote SSH command
-        run: ssh -o StrictHostKeyChecking=no smile@2.187.7.183 "echo GitHub deployed on $(date) > ~/deploy.txt"
+      - name: Deploy via SSH with detailed logs
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+            set -x   # فعال کردن حالت debug
+            whoami
+            pwd
+            ls -l
+            cd /home/smile/my_projects/todo-app
+            git pull origin main
+            docker compose pull
+            docker compose up -d --remove-orphans
+            docker ps
+            exit
+          EOF
