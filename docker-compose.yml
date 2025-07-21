@@ -6,8 +6,9 @@ services:
       - "8888:5000"
     depends_on:
       - db
-    volumes:
-      - ./app:/app
+    environment:
+      - FLASK_ENV=production
+    # حذف volume تا image جدید جایگزین بشه
 
   db:
     image: postgres:15
