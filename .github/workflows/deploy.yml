@@ -22,13 +22,12 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
             set -x   # فعال کردن حالت debug
-            whoami
-            pwd
-            ls -l
             cd /home/smile/my_projects/todo-app
             git pull origin main
+            docker compose down -v
             docker compose build --no-cache
             docker compose up -d --remove-orphans
             docker ps
             exit
           EOF
+
